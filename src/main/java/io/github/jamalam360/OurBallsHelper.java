@@ -26,7 +26,7 @@ import static org.lwjgl.vulkan.VK10.*;
  * i didn't write any of this :help_me:
  */
 @SuppressWarnings({"SpellCheckingInspection", "UnusedReturnValue", "unused"})
-public class ExampleUsage2 {
+public class OurBallsHelper {
     private static final boolean debug = System.getProperty("NDEBUG") == null;
 
     private static final String[] layers = {
@@ -1241,7 +1241,7 @@ public class ExampleUsage2 {
     private static int width, height;
     private static DepthStencil depthStencil;
 
-    public static void executeBalls(String[] args) throws IOException {
+    public static void executeBalls() throws IOException {
         if (!glfwInit()) {
             throw new RuntimeException("Failed to initialize GLFW");
         }
@@ -1352,8 +1352,8 @@ public class ExampleUsage2 {
                 if (width <= 0 || height <= 0)
                     return;
                 swapchainRecreator.mustRecreate = true;
-                ExampleUsage2.width = width;
-                ExampleUsage2.height = height;
+                OurBallsHelper.width = width;
+                OurBallsHelper.height = height;
             }
         };
         glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
